@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "f72ed1c6-266c-4ee6-ae86-6651726bf5df",
+		"name": "puppeteer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_puppets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_commands",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"puppet\",\n    \"commands\": [\"results.push('foobar')\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/command",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"command"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "\"test1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_results",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/result?id=puppet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"result"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "puppet"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
